@@ -1,0 +1,22 @@
+# Ambientes virtuais
+venv/
+env/
+.env
+
+# Banco de Dados local do Django
+db.sqlite3
+db.sqlite3-journal
+
+# Arquivos compilados do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de Sistema Operacional e Editores
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Outros
+*.log
