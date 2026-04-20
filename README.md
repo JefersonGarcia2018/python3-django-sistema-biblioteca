@@ -19,6 +19,11 @@ O sistema emprega a arquitetura **MVT** (Model, View, Template) tradicional do e
 1.  **`usuarios`**: App responsável pela gestão estrutural de segurança, cadastros e login, expandindo o `AbstractUser` e integrando rotas customizadas de validação de sessões baseadas em E-mail como credencial principal.
 2.  **`livros`**: O core de negócios e principal interface de dados, possuindo relacionamentos base unindo *Autores* aos *Livros*. Engloba os modelos, os formulários com verificações integradas, e a lógica das transações C.R.U.D.
 
+-----
+### Vídeo demonstração - Sistema de Biblioteca
+[![Assista ao vídeo de exemplo](https://img.youtube.com/vi/9V3cCOrKcMs/maxresdefault.jpg)](https://youtu.be/9V3cCOrKcMs)
+-----
+
 ## 💻 Como Rodar o Projeto
 
 Caso faça um fork ou baixe, você pode rodar esse repositório em desenvolvimento em sua própria base:
