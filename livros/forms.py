@@ -2,14 +2,8 @@ from django import forms
 from .models import Livro
 
 class LivroForm(forms.ModelForm):
-    data_publicacao = forms.DateField(
-        input_formats=['%d/%m/%Y'],
-        widget=forms.DateInput(format='%d/%m/%Y', attrs={
-            'class': 'w-full p-2 border border-gray-300 rounded-md mb-4 focus:ring-blue-500 focus:border-blue-500',
-            'placeholder': 'dd/mm/aaaa'
-        })
-    )
-    
+
+    #Criação do Meta com as classes do Tailwind
     class Meta:
         model = Livro
         fields = ['titulo', 'autor', 'isbn', 'data_publicacao', 'disponivel']
@@ -18,3 +12,13 @@ class LivroForm(forms.ModelForm):
             field: forms.TextInput(attrs={'class': 'w-full p-2 border rounded-md mb-4'})
             for field in ['titulo', 'isbn']
         }
+
+    #Criação do campo de data de publicação com formatação específica
+    data_publicacao = forms.DateField(
+        input_formats=['%d/%m/%Y'],
+        widget=forms.DateInput(format='%d/%m/%Y', attrs={
+            'class': 'w-full p-2 border border-gray-300 rounded-md mb-4 focus:ring-blue-500 focus:border-blue-500',
+            'placeholder': 'dd/mm/aaaa'
+        })
+    )
+    

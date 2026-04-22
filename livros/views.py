@@ -5,12 +5,12 @@ from .models import Autor
 from .models import Livro
 from .forms import LivroForm
 
-@login_required
+@login_required #Decorator que verifica se o usuário está logado (Middleware)
 def lista_livros(request):
     livros = Livro.objects.all()
     return render(request, 'livros/lista.html', {'livros': livros})
 
-@login_required
+@login_required #Decorator que verifica se o usuário está logado (Middleware)
 def novo_livro(request):
     if request.method == 'POST':
         form = LivroForm(request.POST)
@@ -21,7 +21,7 @@ def novo_livro(request):
         form = LivroForm()
     return render(request, 'livros/form_livro.html', {'form': form})
 
-@login_required
+@login_required #Decorator que verifica se o usuário está logado (Middleware)
 def editar_livro(request, pk):
     livro = get_object_or_404(Livro, pk=pk)
     if request.method == 'POST':
@@ -34,7 +34,7 @@ def editar_livro(request, pk):
         form = LivroForm(instance=livro)
     return render(request, 'livros/form_livro.html', {'form': form, 'editando': True})
 
-@login_required
+@login_required #Decorator que verifica se o usuário está logado (Middleware)
 def excluir_livro(request, pk):
     livro = get_object_or_404(Livro, pk=pk)
     if request.method == 'POST':
@@ -42,7 +42,7 @@ def excluir_livro(request, pk):
         return redirect('lista_livros')
     return render(request, 'livros/confirmar_exclusao.html', {'livro': livro})
 
-@login_required
+@login_required #Decorator que verifica se o usuário está logado (Middleware)
 def cadastrar_autor_ajax(request):
     if request.method == 'POST':
         nome = request.POST.get('nome')
